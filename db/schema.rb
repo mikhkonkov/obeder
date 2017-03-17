@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170211145604) do
+ActiveRecord::Schema.define(version: 20170317115018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,8 +53,9 @@ ActiveRecord::Schema.define(version: 20170211145604) do
   create_table "users", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.string  "name"
     t.string  "email"
-    t.boolean "neem",        default: false
+    t.boolean "neem",            default: false
     t.string  "description"
+    t.string  "password_digest"
   end
 
   add_foreign_key "menu_dishes", "dishes"
