@@ -1,4 +1,8 @@
 ru:
+  user_mailer:
+    set_password:
+      subject: Obeder. Установка пароля.
+
   date:
     formats:
       menu_date: '%d %B, %A'
@@ -57,3 +61,5 @@ ru:
             success: Меню опубликовано
           update:
             success: Меню обновлено
+
+  save: Сохранить
