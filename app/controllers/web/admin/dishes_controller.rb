@@ -1,4 +1,6 @@
 class Web::Admin::DishesController < Web::Admin::ApplicationController
+  before_action :authorize_cook
+
   def index
     @q = Dish.order(:name).ransack(params[:q])
     @dishes = @q.result.page(params[:page])

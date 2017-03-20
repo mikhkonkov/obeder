@@ -1,4 +1,5 @@
 class Web::Admin::UserMenusController < Web::Admin::ApplicationController
+  before_action :authorize_cook
 
   def index
     @date = Date.parse(params[:date]) if params[:date]
