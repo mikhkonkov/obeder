@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317115018) do
+ActiveRecord::Schema.define(version: 20170318184540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20170317115018) do
     t.boolean "neem",            default: false
     t.string  "description"
     t.string  "password_digest"
+    t.string  "role"
   end
 
   add_foreign_key "menu_dishes", "dishes"
