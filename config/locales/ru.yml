@@ -63,6 +63,7 @@ ru:
             success: Меню обновлено
 
   save: Сохранить
+  password_changed: Пароль изменен успешно
   logout: Выйти
   obeder: Обедер
 
