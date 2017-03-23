@@ -30,8 +30,6 @@
   import MenuDish from './MenuDish';
   import MenuPresenter from '../../presenters/MenuPresenter';
 
-  const userId = localStorage.getItem('user_uid');
-
   function getSelectedDishes(dishTypes) {
     return _.reduce(dishTypes, (acc, dishes) => {
       const selectedDish = _.find(dishes, { selected: true });
@@ -142,12 +140,12 @@
         };
 
         usersService
-          .setMenu(userId, this.day.id, getSelectedDishes(this.dishTypes));
+          .setMenu(this.day.id, getSelectedDishes(this.dishTypes));
       },
 
       sendComment(event) {
         usersService
-          .setMenu(userId, this.day.id, getSelectedDishes(this.dishTypes), event.target.value);
+          .setMenu(this.day.id, getSelectedDishes(this.dishTypes), event.target.value);
       },
     },
   };

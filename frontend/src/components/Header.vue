@@ -13,7 +13,10 @@
       </label>
       <span class="header__switcher-label">Eм</span>
     </div>
-    <div class="header__user">{{user.name}}</div>
+    <div class="header__user">
+      {{user.name}}
+      <router-link to='/logout'>Выйти</router-link>
+    </div>
   </div>
 </template>
 
@@ -23,10 +26,8 @@
   export default {
     name: 'Header',
     created() {
-      const id = localStorage.getItem('user_uid');
-
       usersService
-        .getOne(id)
+        .getOne(null)
         .then(
           (user) => {
             this.user = {
@@ -44,14 +45,12 @@
     },
     methods: {
       onChange(em) {
-        const id = localStorage.getItem('user_uid');
         const payload = {
           user: {
             neem: !em,
           },
         };
-
-        usersService.save(id, payload);
+        usersService.save(null, payload);
       },
     },
   };
